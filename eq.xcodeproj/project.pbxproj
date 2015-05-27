@@ -80,11 +80,11 @@
 			isa = PBXGroup;
 			children = (
 				A12537351B13D56400DAE918 /* AppDelegate.swift */,
-				A12537501B13D58500DAE918 /* PanelViewController.xib */,
+				A12537391B13D56400DAE918 /* MainMenu.xib */,
 				A12537521B13D59400DAE918 /* PanelViewController.swift */,
+				A12537501B13D58500DAE918 /* PanelViewController.xib */,
 				A12537541B13D5A700DAE918 /* EventMonitor.swift */,
 				A12537371B13D56400DAE918 /* Images.xcassets */,
-				A12537391B13D56400DAE918 /* MainMenu.xib */,
 				A12537331B13D56400DAE918 /* Supporting Files */,
 			);
 			path = eq;
