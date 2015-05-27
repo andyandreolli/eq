@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0422FFB2C529189760B7D054 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B6ACAE3AA1E46A0BB4E366F /* Carbon.framework */; };
+		04ABC440C2558352EAB38E27 /* MASHotKey.h in Headers */ = {isa = PBXBuildFile; fileRef = CB582C54F3D6A9E5C61211C0 /* MASHotKey.h */; };
+		0F0004D73D3C1BB0903F8A6E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74AB9AA2D90EA5A08117CBCA /* Cocoa.framework */; };
+		226D57B2B4540E44F8466F39 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74AB9AA2D90EA5A08117CBCA /* Cocoa.framework */; };
+		28144E634B206DEBB3F83D1E /* MASShortcutView+Bindings.h in Headers */ = {isa = PBXBuildFile; fileRef = 24D95C180AFAE26C8D90F912 /* MASShortcutView+Bindings.h */; };
+		37ED1726D7BDE3804431B01B /* MASShortcutView+Bindings.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D3B79C05FF930C0BC7B012 /* MASShortcutView+Bindings.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		41E10F91CD0B54E7CD19AD7E /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 05669968E369A5E35B4B6942 /* MASShortcutView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4589A49DA045F62FDB5BE923 /* MASShortcutMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2009D59CFBB23B44C94B91E0 /* MASShortcutMonitor.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		544C42982DE7A4AABD2D4574 /* MASDictionaryTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F45903BE9FFACE0F725A319 /* MASDictionaryTransformer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		58C4CC616B39D4794B73FB71 /* MASHotKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC9C127B84674D520A488D8 /* MASHotKey.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		59CEB0C0256E54E2F496B931 /* MASDictionaryTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A96B8A9CA5C2005456AB615 /* MASDictionaryTransformer.h */; };
+		5D79D5A2EC450F5E134A7005 /* MASShortcutBinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E551F9F6392F120E19FA78C /* MASShortcutBinder.h */; };
+		6CCC803A340D2939AC6B0008 /* MASShortcutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 321500844FE0660FCA6B575E /* MASShortcutView.h */; };
+		7A6DFD413DAB077796DFF42A /* Shortcut.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A49C91C22F493E1B1F46A81 /* Shortcut.h */; };
+		8B42B695623340DCE7445960 /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA6A0DBEAEDFDE95E14E9CE /* MASShortcut.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A91CE3B7F8A7AC2961BE1225 /* MASShortcutMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = C8BC635CC62178157FEB92F0 /* MASShortcutMonitor.h */; };
+		BD5C1A7DF94CA705ABCA4F6C /* MASKeyCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = C682B2A230EBD62A94AAF0FA /* MASKeyCodes.h */; };
+		C2DAB19F39C9A1DB95002F29 /* Pods-eq-MASShortcut-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BB71214F322C76482E17CC /* Pods-eq-MASShortcut-dummy.m */; };
+		C3E5C389612D03BB84166BBB /* Pods-eq-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6E163B339C5E1A50516CB7 /* Pods-eq-dummy.m */; };
+		D8179099C9228780E36DF069 /* MASShortcutValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = DBF584601650551186C284D0 /* MASShortcutValidator.h */; };
+		D98F18907C58D4B4BF6C1430 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5CD5827474654EAB26F405 /* AppKit.framework */; };
+		E09BAD214A4785487F25BDC0 /* MASShortcutValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = FF04621E0B533557DF2F83FF /* MASShortcutValidator.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		EA90A57363BB1415F883E701 /* MASShortcutBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 91F0BD5BAF083868E4DC92BE /* MASShortcutBinder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FA9666A45CE4D901D548F031 /* MASShortcut.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D6440FF86C27FE6D90FF5EB /* MASShortcut.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		61B9D71CA58D181F5E858ABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B550D16A78B1971DB04264E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C8BD7D042B6ADFDF2C7744D;
+			remoteInfo = "Pods-eq-MASShortcut";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01AAEAB4C4DB66720196A5D4 /* Pods-eq-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-eq-resources.sh"; sourceTree = "<group>"; };
+		022259AA0BA78A33CC14AAA7 /* Pods-eq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-eq.debug.xcconfig"; sourceTree = "<group>"; };
+		05669968E369A5E35B4B6942 /* MASShortcutView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcutView.m; path = Framework/MASShortcutView.m; sourceTree = "<group>"; };
+		0B6ACAE3AA1E46A0BB4E366F /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Carbon.framework; sourceTree = DEVELOPER_DIR; };
+		1A49C91C22F493E1B1F46A81 /* Shortcut.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Shortcut.h; path = Framework/Shortcut.h; sourceTree = "<group>"; };
+		2009D59CFBB23B44C94B91E0 /* MASShortcutMonitor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcutMonitor.m; path = Framework/MASShortcutMonitor.m; sourceTree = "<group>"; };
+		24D95C180AFAE26C8D90F912 /* MASShortcutView+Bindings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASShortcutView+Bindings.h"; path = "Framework/MASShortcutView+Bindings.h"; sourceTree = "<group>"; };
+		2A2504705F331332BB28D992 /* Pods-eq-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-eq-environment.h"; sourceTree = "<group>"; };
+		2A96B8A9CA5C2005456AB615 /* MASDictionaryTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASDictionaryTransformer.h; path = Framework/MASDictionaryTransformer.h; sourceTree = "<group>"; };
+		321500844FE0660FCA6B575E /* MASShortcutView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcutView.h; path = Framework/MASShortcutView.h; sourceTree = "<group>"; };
+		3DA6A0DBEAEDFDE95E14E9CE /* MASShortcut.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcut.m; path = Framework/MASShortcut.m; sourceTree = "<group>"; };
+		42A9E5289C533227AE5B9F39 /* Pods-eq-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-eq-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4B5CD5827474654EAB26F405 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
+		4BC86AE1BF0BF507EBB4A9DA /* Pods-eq-MASShortcut.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-eq-MASShortcut.xcconfig"; sourceTree = "<group>"; };
+		4D6440FF86C27FE6D90FF5EB /* MASShortcut.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcut.h; path = Framework/MASShortcut.h; sourceTree = "<group>"; };
+		4E551F9F6392F120E19FA78C /* MASShortcutBinder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcutBinder.h; path = Framework/MASShortcutBinder.h; sourceTree = "<group>"; };
+		69E82DD55318FA840F20D99A /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		72BB71214F322C76482E17CC /* Pods-eq-MASShortcut-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-eq-MASShortcut-dummy.m"; sourceTree = "<group>"; };
+		74AB9AA2D90EA5A08117CBCA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		75A3A2EC0CEF6E301812B313 /* libPods-eq-MASShortcut.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eq-MASShortcut.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		806D1AC7FAF04C95B49171E2 /* Pods-eq-MASShortcut-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-eq-MASShortcut-Private.xcconfig"; sourceTree = "<group>"; };
+		8BC9C127B84674D520A488D8 /* MASHotKey.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASHotKey.m; path = Framework/MASHotKey.m; sourceTree = "<group>"; };
+		8F45903BE9FFACE0F725A319 /* MASDictionaryTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASDictionaryTransformer.m; path = Framework/MASDictionaryTransformer.m; sourceTree = "<group>"; };
+		91F0BD5BAF083868E4DC92BE /* MASShortcutBinder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcutBinder.m; path = Framework/MASShortcutBinder.m; sourceTree = "<group>"; };
+		A8D3B79C05FF930C0BC7B012 /* MASShortcutView+Bindings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MASShortcutView+Bindings.m"; path = "Framework/MASShortcutView+Bindings.m"; sourceTree = "<group>"; };
+		AE003AD531FBC0AB96DF085B /* libPods-eq.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eq.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFDB57DFC2C0023B4BEA7F3C /* Pods-eq-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-eq-acknowledgements.plist"; sourceTree = "<group>"; };
+		C0D1D63F836AE388D987344F /* Pods-eq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-eq.release.xcconfig"; sourceTree = "<group>"; };
+		C682B2A230EBD62A94AAF0FA /* MASKeyCodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASKeyCodes.h; path = Framework/MASKeyCodes.h; sourceTree = "<group>"; };
+		C8BC635CC62178157FEB92F0 /* MASShortcutMonitor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcutMonitor.h; path = Framework/MASShortcutMonitor.h; sourceTree = "<group>"; };
+		CB582C54F3D6A9E5C61211C0 /* MASHotKey.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASHotKey.h; path = Framework/MASHotKey.h; sourceTree = "<group>"; };
+		DBD22DAE0C1208588BA044BD /* Pods-eq-MASShortcut-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-eq-MASShortcut-prefix.pch"; sourceTree = "<group>"; };
+		DBF584601650551186C284D0 /* MASShortcutValidator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASShortcutValidator.h; path = Framework/MASShortcutValidator.h; sourceTree = "<group>"; };
+		FE6E163B339C5E1A50516CB7 /* Pods-eq-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-eq-dummy.m"; sourceTree = "<group>"; };
+		FF04621E0B533557DF2F83FF /* MASShortcutValidator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASShortcutValidator.m; path = Framework/MASShortcutValidator.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FB71FB9C3D8869CF0EEC374 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F0004D73D3C1BB0903F8A6E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41DC6845A927F969338011B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D98F18907C58D4B4BF6C1430 /* AppKit.framework in Frameworks */,
+				0422FFB2C529189760B7D054 /* Carbon.framework in Frameworks */,
+				226D57B2B4540E44F8466F39 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03B60AFDAC02F8CE8BFB0683 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4BC86AE1BF0BF507EBB4A9DA /* Pods-eq-MASShortcut.xcconfig */,
+				806D1AC7FAF04C95B49171E2 /* Pods-eq-MASShortcut-Private.xcconfig */,
+				72BB71214F322C76482E17CC /* Pods-eq-MASShortcut-dummy.m */,
+				DBD22DAE0C1208588BA044BD /* Pods-eq-MASShortcut-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-eq-MASShortcut";
+			sourceTree = "<group>";
+		};
+		24967D0DE938363178E24F12 /* Pods-eq */ = {
+			isa = PBXGroup;
+			children = (
+				42A9E5289C533227AE5B9F39 /* Pods-eq-acknowledgements.markdown */,
+				BFDB57DFC2C0023B4BEA7F3C /* Pods-eq-acknowledgements.plist */,
+				FE6E163B339C5E1A50516CB7 /* Pods-eq-dummy.m */,
+				2A2504705F331332BB28D992 /* Pods-eq-environment.h */,
+				01AAEAB4C4DB66720196A5D4 /* Pods-eq-resources.sh */,
+				022259AA0BA78A33CC14AAA7 /* Pods-eq.debug.xcconfig */,
+				C0D1D63F836AE388D987344F /* Pods-eq.release.xcconfig */,
+			);
+			name = "Pods-eq";
+			path = "Target Support Files/Pods-eq";
+			sourceTree = "<group>";
+		};
+		2553F6A4023B9063F5B68DF6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				24967D0DE938363178E24F12 /* Pods-eq */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2EC54912B19877941A754546 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63FB95619323620955F826F3 /* MASShortcut */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		63FB95619323620955F826F3 /* MASShortcut */ = {
+			isa = PBXGroup;
+			children = (
+				2A96B8A9CA5C2005456AB615 /* MASDictionaryTransformer.h */,
+				8F45903BE9FFACE0F725A319 /* MASDictionaryTransformer.m */,
+				CB582C54F3D6A9E5C61211C0 /* MASHotKey.h */,
+				8BC9C127B84674D520A488D8 /* MASHotKey.m */,
+				C682B2A230EBD62A94AAF0FA /* MASKeyCodes.h */,
+				4D6440FF86C27FE6D90FF5EB /* MASShortcut.h */,
+				3DA6A0DBEAEDFDE95E14E9CE /* MASShortcut.m */,
+				4E551F9F6392F120E19FA78C /* MASShortcutBinder.h */,
+				91F0BD5BAF083868E4DC92BE /* MASShortcutBinder.m */,
+				C8BC635CC62178157FEB92F0 /* MASShortcutMonitor.h */,
+				2009D59CFBB23B44C94B91E0 /* MASShortcutMonitor.m */,
+				DBF584601650551186C284D0 /* MASShortcutValidator.h */,
+				FF04621E0B533557DF2F83FF /* MASShortcutValidator.m */,
+				321500844FE0660FCA6B575E /* MASShortcutView.h */,
+				05669968E369A5E35B4B6942 /* MASShortcutView.m */,
+				24D95C180AFAE26C8D90F912 /* MASShortcutView+Bindings.h */,
+				A8D3B79C05FF930C0BC7B012 /* MASShortcutView+Bindings.m */,
+				1A49C91C22F493E1B1F46A81 /* Shortcut.h */,
+				03B60AFDAC02F8CE8BFB0683 /* Support Files */,
+			);
+			path = MASShortcut;
+			sourceTree = "<group>";
+		};
+		650997391AD77FE51B8FD482 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B78668434605ABE809E227DC /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B78668434605ABE809E227DC /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				4B5CD5827474654EAB26F405 /* AppKit.framework */,
+				0B6ACAE3AA1E46A0BB4E366F /* Carbon.framework */,
+				74AB9AA2D90EA5A08117CBCA /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		D09BCB90AB97D54D60DA2625 = {
+			isa = PBXGroup;
+			children = (
+				69E82DD55318FA840F20D99A /* Podfile */,
+				650997391AD77FE51B8FD482 /* Frameworks */,
+				2EC54912B19877941A754546 /* Pods */,
+				DED2E5A7DDECAF736FDB6D56 /* Products */,
+				2553F6A4023B9063F5B68DF6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DED2E5A7DDECAF736FDB6D56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE003AD531FBC0AB96DF085B /* libPods-eq.a */,
+				75A3A2EC0CEF6E301812B313 /* libPods-eq-MASShortcut.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		991270BDD9EC64D1628134CC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59CEB0C0256E54E2F496B931 /* MASDictionaryTransformer.h in Headers */,
+				04ABC440C2558352EAB38E27 /* MASHotKey.h in Headers */,
+				BD5C1A7DF94CA705ABCA4F6C /* MASKeyCodes.h in Headers */,
+				FA9666A45CE4D901D548F031 /* MASShortcut.h in Headers */,
+				5D79D5A2EC450F5E134A7005 /* MASShortcutBinder.h in Headers */,
+				A91CE3B7F8A7AC2961BE1225 /* MASShortcutMonitor.h in Headers */,
+				D8179099C9228780E36DF069 /* MASShortcutValidator.h in Headers */,
+				28144E634B206DEBB3F83D1E /* MASShortcutView+Bindings.h in Headers */,
+				6CCC803A340D2939AC6B0008 /* MASShortcutView.h in Headers */,
+				7A6DFD413DAB077796DFF42A /* Shortcut.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4C8BD7D042B6ADFDF2C7744D /* Pods-eq-MASShortcut */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DCE880B51E414E66BDCE5CA /* Build configuration list for PBXNativeTarget "Pods-eq-MASShortcut" */;
+			buildPhases = (
+				423CE36B76CA2B19D570565E /* Sources */,
+				41DC6845A927F969338011B6 /* Frameworks */,
+				991270BDD9EC64D1628134CC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-eq-MASShortcut";
+			productName = "Pods-eq-MASShortcut";
+			productReference = 75A3A2EC0CEF6E301812B313 /* libPods-eq-MASShortcut.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		81DD68ADF3BC112F9E0E5FE1 /* Pods-eq */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E60402D4935D7287BB46CC28 /* Build configuration list for PBXNativeTarget "Pods-eq" */;
+			buildPhases = (
+				C33A11A3984EA1FAB3ED658C /* Sources */,
+				3FB71FB9C3D8869CF0EEC374 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C2997B8C7459BA7F510175E /* PBXTargetDependency */,
+			);
+			name = "Pods-eq";
+			productName = "Pods-eq";
+			productReference = AE003AD531FBC0AB96DF085B /* libPods-eq.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B550D16A78B1971DB04264E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = 99E43D9060B753E5CBAACBF5 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D09BCB90AB97D54D60DA2625;
+			productRefGroup = DED2E5A7DDECAF736FDB6D56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				81DD68ADF3BC112F9E0E5FE1 /* Pods-eq */,
+				4C8BD7D042B6ADFDF2C7744D /* Pods-eq-MASShortcut */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		423CE36B76CA2B19D570565E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				544C42982DE7A4AABD2D4574 /* MASDictionaryTransformer.m in Sources */,
+				58C4CC616B39D4794B73FB71 /* MASHotKey.m in Sources */,
+				8B42B695623340DCE7445960 /* MASShortcut.m in Sources */,
+				EA90A57363BB1415F883E701 /* MASShortcutBinder.m in Sources */,
+				4589A49DA045F62FDB5BE923 /* MASShortcutMonitor.m in Sources */,
+				E09BAD214A4785487F25BDC0 /* MASShortcutValidator.m in Sources */,
+				37ED1726D7BDE3804431B01B /* MASShortcutView+Bindings.m in Sources */,
+				41E10F91CD0B54E7CD19AD7E /* MASShortcutView.m in Sources */,
+				C2DAB19F39C9A1DB95002F29 /* Pods-eq-MASShortcut-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C33A11A3984EA1FAB3ED658C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3E5C389612D03BB84166BBB /* Pods-eq-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C2997B8C7459BA7F510175E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-eq-MASShortcut";
+			target = 4C8BD7D042B6ADFDF2C7744D /* Pods-eq-MASShortcut */;
+			targetProxy = 61B9D71CA58D181F5E858ABE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0FEF35411F1D53553B64BFAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0D1D63F836AE388D987344F /* Pods-eq.release.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		26A472718654EA449238680E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3CE041BA1AC862D049016C04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9572D9D88E0093933EEE1DAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 806D1AC7FAF04C95B49171E2 /* Pods-eq-MASShortcut-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-eq-MASShortcut/Pods-eq-MASShortcut-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B810AB05EC315EC30BC28AC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 806D1AC7FAF04C95B49171E2 /* Pods-eq-MASShortcut-Private.xcconfig */;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-eq-MASShortcut/Pods-eq-MASShortcut-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FA007D4D1DF36133151EBA50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 022259AA0BA78A33CC14AAA7 /* Pods-eq.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7DCE880B51E414E66BDCE5CA /* Build configuration list for PBXNativeTarget "Pods-eq-MASShortcut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9572D9D88E0093933EEE1DAD /* Debug */,
+				B810AB05EC315EC30BC28AC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99E43D9060B753E5CBAACBF5 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CE041BA1AC862D049016C04 /* Debug */,
+				26A472718654EA449238680E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E60402D4935D7287BB46CC28 /* Build configuration list for PBXNativeTarget "Pods-eq" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA007D4D1DF36133151EBA50 /* Debug */,
+				0FEF35411F1D53553B64BFAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B550D16A78B1971DB04264E6 /* Project object */;
+}

@@ -19,6 +19,7 @@ class PanelViewController: NSViewController {
     @IBOutlet var settingsView: NSView!
     @IBOutlet var stgsButton1: NSButton!
     @IBOutlet var stgsPopup1: NSPopUpButton!
+    @IBOutlet var shortcutView: MASShortcutView!
 
     var clipboard = NSPasteboard.generalPasteboard()
     var defaults = NSUserDefaults.standardUserDefaults()
@@ -49,6 +50,7 @@ class PanelViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         box.becomeFirstResponder()
+        self.shortcutView.associatedUserDefaultsKey = "GlobalShortcut";
         defaults.synchronize()
         if defaults.boolForKey("isCopied") == false {
             copyIMG = false

@@ -10,6 +10,7 @@
                 <outlet property="mainView" destination="UUr-SE-Cwi" id="M0J-jX-Ls9"/>
                 <outlet property="pic" destination="0tF-zH-cNA" id="7je-hA-aNp"/>
                 <outlet property="settingsView" destination="1Ve-uX-SS2" id="hBX-Qj-o0N"/>
+                <outlet property="shortcutView" destination="qJf-eo-rWA" id="Mtk-v0-BGc"/>
                 <outlet property="stgsButton1" destination="PZJ-xv-wny" id="j0H-KE-9hr"/>
                 <outlet property="stgsPopup1" destination="obi-KL-1qk" id="hS4-w9-Vkm"/>
                 <outlet property="switchButton" destination="EdM-lb-9AL" id="A00-yk-uxO"/>
@@ -100,8 +101,8 @@
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OqC-EH-YBW">
-                            <rect key="frame" x="18" y="53" width="198" height="17"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="http://dynachine.tumblr.com/eq" id="VrL-Pc-w2g">
+                            <rect key="frame" x="18" y="53" width="52" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hotkey:" id="VrL-Pc-w2g">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -136,6 +137,9 @@
                                 <action selector="switchCopyMode:" target="-2" id="GrT-hh-vWT"/>
                             </connections>
                         </button>
+                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJf-eo-rWA" customClass="MASShortcutView">
+                            <rect key="frame" x="101" y="52" width="129" height="19"/>
+                        </customView>
                     </subviews>
                 </customView>
             </subviews>

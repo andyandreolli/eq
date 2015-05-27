@@ -30,6 +30,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             }
             eventMonitor?.start()
+            MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey("GlobalShortcut", toAction: { () -> Void in
+                self.togglePopover (self)
+            })
         }
         popover.contentViewController = PanelViewController(nibName: "PanelViewController", bundle: nil)
     }
