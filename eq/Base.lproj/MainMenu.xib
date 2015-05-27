@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,12 +11,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="eq" customModuleProvider="target">
-            <connections>
-                <outlet property="box" destination="kms-5y-GPL" id="zLa-Qj-hmc"/>
-                <outlet property="pic" destination="isP-zB-HNI" id="10T-Dx-Ecv"/>
-            </connections>
-        </customObject>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="e_q" customModuleProvider="target"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
@@ -667,42 +662,5 @@
                 </menuItem>
             </items>
         </menu>
-        <drawer trailingOffset="15" id="ZRf-QN-tix">
-            <size key="contentSize" width="100" height="100"/>
-            <size key="maxContentSize" width="10000" height="10000"/>
-        </drawer>
-        <window title="ēq - equation editor" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="hE5-oi-oo9" customClass="NSPanel">
-            <windowStyleMask key="styleMask" titled="YES" utility="YES" HUD="YES"/>
-            <rect key="contentRect" x="432" y="345" width="480" height="230"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
-            <view key="contentView" id="zXx-lW-JBL">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="230"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kms-5y-GPL">
-                        <rect key="frame" x="22" y="179" width="436" height="31"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" focusRingType="none" alignment="center" title="Insert Equation..." drawsBackground="YES" id="vaM-AF-Cj5">
-                            <font key="font" size="26" name="Helvetica-LightOblique"/>
-                            <color key="textColor" red="1" green="0.97469725762660009" blue="0.9720227592044528" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                        </textFieldCell>
-                        <connections>
-                            <action selector="updateImage:" target="Voe-Tx-rLC" id="XJD-PH-bnk"/>
-                        </connections>
-                    </textField>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="isP-zB-HNI">
-                        <rect key="frame" x="22" y="20" width="436" height="142"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="UjY-Ot-n7G"/>
-                    </imageView>
-                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="643-mG-Mlh">
-                        <rect key="frame" x="22" y="168" width="436" height="5"/>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" metaFont="system"/>
-                    </box>
-                </subviews>
-            </view>
-            <point key="canvasLocation" x="290" y="450"/>
-        </window>
     </objects>
 </document>
