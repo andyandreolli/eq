@@ -11,35 +11,54 @@ import WebKit
 
 
 @NSApplicationMain
+
+
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    var eventMonitor: EventMonitor?
-
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2)
-    let popover = NSPopover.alloc ()
-
-    @IBOutlet weak var window: NSWindow!
     
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        if let button = statusItem.button {
+    
+    var eventMonitor: EventMonitor? //declares eventmonitor object that checks wether user clicks outside the application window - launched later
+    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2) //declares status bar object
+    let popover = NSPopover.alloc() //declares popover object
+    
+    
+    
+    func applicationDidFinishLaunching(aNotification: NSNotification) //run when app gets opened
+    
+    {
+        if let button = statusItem.button //initialises status item button
+        {
             button.title = "ēq"
             button.action = Selector("togglePopover:")
-            eventMonitor = EventMonitor(mask: .LeftMouseDownMask | .RightMouseDownMask) { [unowned self] event in
+            
+            //event monitor is initialised
+            eventMonitor = EventMonitor(mask: .LeftMouseDownMask | .RightMouseDownMask)
+                { [unowned self] event in
                 if self.popover.shown {
                     self.closePopover(event)
                 }
             }
             eventMonitor?.start()
+            
+            //shortcut monitor is initialised
             MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey("GlobalShortcut", toAction: { () -> Void in
                 self.togglePopover (self)
             })
         }
+        
+        //popover is initialised
         popover.contentViewController = PanelViewController(nibName: "PanelViewController", bundle: nil)
     }
 
+    
+    
     func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+        //ain't nobody got time for that
     }
+    
+    
+    
+    //the following funcions either show or hide the popover; note that when the popover gets shown, an event monitor is started (also, it is closed when popover gets hidden)
     
     func showPopover(sender: AnyObject?) {
         if let button = statusItem.button {
@@ -48,13 +67,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSApp.activateIgnoringOtherApps(true)
         }
     }
-
+    
     func closePopover (sender: AnyObject?) {
         popover.performClose(sender)
         eventMonitor?.stop()
     }
     
-    func togglePopover (sender: AnyObject?) {
+    func togglePopover (sender: AnyObject?) //this is the function that is actually called when the menuitem is pressed
+    {
         if popover.shown {
             closePopover(sender)
         } else {
