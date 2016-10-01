@@ -18,30 +18,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     var eventMonitor: EventMonitor? //declares eventmonitor object that checks wether user clicks outside the application window - launched later
-    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-2) //declares status bar object
-    let popover = NSPopover.alloc() //declares popover object
+    let statusItem = NSStatusBar.system().statusItem(withLength: -2) //declares status bar object
+    let popover = NSPopover() //declares popover object
     
     
     
-    func applicationDidFinishLaunching(aNotification: NSNotification) //run when app gets opened
+    func applicationDidFinishLaunching(_ aNotification: Notification) //run when app gets opened
     
     {
         if let button = statusItem.button //initialises status item button
         {
             button.title = "ēq"
-            button.action = Selector("togglePopover:")
+            button.action = #selector(AppDelegate.togglePopover(_:))
             
             //event monitor is initialised
-            eventMonitor = EventMonitor(mask: .LeftMouseDownMask | .RightMouseDownMask)
+            eventMonitor = EventMonitor(mask: [.leftMouseDown , .rightMouseDown])
                 { [unowned self] event in
-                if self.popover.shown {
+                if self.popover.isShown {
                     self.closePopover(event)
                 }
             }
             eventMonitor?.start()
             
             //shortcut monitor is initialised
-            MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey("GlobalShortcut", toAction: { () -> Void in
+            MASShortcutBinder.shared().bindShortcut(withDefaultsKey: "GlobalShortcut", toAction: { () -> Void in
                 self.togglePopover (self)
             })
         }
@@ -52,7 +52,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     
     
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         //ain't nobody got time for that
     }
     
@@ -60,22 +60,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     //the following funcions either show or hide the popover; note that when the popover gets shown, an event monitor is started (also, it is closed when popover gets hidden)
     
-    func showPopover(sender: AnyObject?) {
+    func showPopover(_ sender: AnyObject?) {
         if let button = statusItem.button {
-            popover.showRelativeToRect(button.bounds, ofView: button, preferredEdge:NSMinYEdge)
+            popover.show(relativeTo: button.bounds, of: button, preferredEdge:NSRectEdge.minY)
             eventMonitor?.start()
-            NSApp.activateIgnoringOtherApps(true)
+            NSApp.activate(ignoringOtherApps: true)
         }
     }
     
-    func closePopover (sender: AnyObject?) {
+    func closePopover (_ sender: AnyObject?) {
         popover.performClose(sender)
         eventMonitor?.stop()
     }
     
-    func togglePopover (sender: AnyObject?) //this is the function that is actually called when the menuitem is pressed
+    func togglePopover (_ sender: AnyObject?) //this is the function that is actually called when the menuitem is pressed
     {
-        if popover.shown {
+        if popover.isShown {
             closePopover(sender)
         } else {
             showPopover(sender)

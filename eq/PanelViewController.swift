@@ -22,39 +22,39 @@ class PanelViewController: NSViewController {
     @IBOutlet var stgsPopup1: NSPopUpButton! //selects image size
     @IBOutlet var shortcutView: MASShortcutView! //captures user chosen global shortcut
     
-    var clipboard = NSPasteboard.generalPasteboard()
-    var defaults = NSUserDefaults.standardUserDefaults()
+    var clipboard = NSPasteboard.general()
+    var defaults = UserDefaults.standard
     
     var settings: Bool = false //if true, settings are shown
     
     
     
-    func loadURL (eq: String) //takes latex code as input; downloads, displays and copies to clipboard the equation image
+    func loadURL (_ eq: String) //takes latex code as input; downloads, displays and copies to clipboard the equation image
     {
         
         //first the URLs are generated
-        var req = "http://latex.codecogs.com/png.latex?\\dpi{" + String(defaults.integerForKey("imgSize")) + "}&space;" + eq //HQ image that will be printed on screen
+        var req = "http://latex.codecogs.com/png.latex?\\dpi{" + String(defaults.integer(forKey: "imgSize")) + "}&space;" + eq //HQ image that will be printed on screen
         var cpy = "http://latex.codecogs.com/png.latex?\\dpi{200}&space;" + eq //smaller image that will be copied to clipboard
         
         //strings containing URLs are then encoded with allowed characters only
-        req = req.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())!
-        cpy = cpy.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())!
+        req = req.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed)!
+        cpy = cpy.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed)!
         
         //strings are converted to NSURL type
-        let requesturl = NSURL (string: req)
-        let cpyurl = NSURL(string: cpy)
+        let requesturl = URL (string: req)
+        let cpyurl = URL(string: cpy)
         //and then downloaded
-        let data = NSData(contentsOfURL: requesturl!)
-        let cpydata = NSData(contentsOfURL: cpyurl!)
+        let data = try? Data(contentsOf: requesturl!)
+        let cpydata = try? Data(contentsOf: cpyurl!)
         
         //if something has actually been downloaded, it gets printed to screen
         if data != nil {
             pic.image = NSImage(data: data!)
-            if defaults.boolForKey("isCopied") == eqImage //the low quality image is copied to clipboard if required
+            if defaults.bool(forKey: "isCopied") == eqImage //the low quality image is copied to clipboard if required
             {
-                var obj: NSObject = NSArray (object: NSImage(data: cpydata!)!)
+                let obj: NSObject = NSArray (object: NSImage(data: cpydata!)!)
                 clipboard.clearContents()
-                clipboard.writeObjects (obj as! [AnyObject])
+                clipboard.writeObjects (obj as! [AnyObject] as! [NSPasteboardWriting])
             }
         }
         
@@ -71,25 +71,25 @@ class PanelViewController: NSViewController {
         self.shortcutView.associatedUserDefaultsKey = "GlobalShortcut"; //tells the program to listen for the shortcut stored at key "GlobalShortcut"
         
         defaults.synchronize() //loads defaults from disk
-        if defaults.objectForKey("isCopied") == nil //this key tells whether the image or the latex code is copied to clipboard
+        if defaults.object(forKey: "isCopied") == nil //this key tells whether the image or the latex code is copied to clipboard
         {
-            defaults.setBool(eqImage, forKey: "isCopied") //the key is generated if not existing
+            defaults.set(eqImage, forKey: "isCopied") //the key is generated if not existing
             defaults.synchronize()
         }
-        else if defaults.boolForKey("isCopied") == latexCode
+        else if defaults.bool(forKey: "isCopied") == latexCode
         {
             stgsButton1.title = "latex code"
         }
         
-        if defaults.objectForKey("imgSize") == nil //this key tells the size of the displayed image
+        if defaults.object(forKey: "imgSize") == nil //this key tells the size of the displayed image
         {
-            defaults.setInteger(900, forKey: "imgSize") //the key is generated if not existing
+            defaults.set(900, forKey: "imgSize") //the key is generated if not existing
             defaults.synchronize()
-            stgsPopup1.selectItemAtIndex(2) //selects correct object in the settings' popup list
+            stgsPopup1.selectItem(at: 2) //selects correct object in the settings' popup list
         }
             
         else {
-            stgsPopup1.selectItemAtIndex(defaults.integerForKey("imgSize")/300 - 1) //selects correct object in the settings' popup list
+            stgsPopup1.selectItem(at: defaults.integer(forKey: "imgSize")/300 - 1) //selects correct object in the settings' popup list
         }
         
     }
@@ -102,7 +102,7 @@ class PanelViewController: NSViewController {
 extension PanelViewController {
     
     
-    @IBAction func updateImage (sender: NSTextField) //run when user presses enter
+    @IBAction func updateImage (_ sender: NSTextField) //run when user presses enter
     
     {
         
@@ -111,28 +111,28 @@ extension PanelViewController {
         proeq = box.stringValue
         
         //latex code is copied to clipboard if necessary
-        if defaults.boolForKey("isCopied") == latexCode {
+        if defaults.bool(forKey: "isCopied") == latexCode {
             clipboard.clearContents()
             clipboard.setString(proeq, forType: NSStringPboardType)
         }
         
-        proeq = proeq.stringByReplacingOccurrencesOfString(" ", withString: "&space;", options: NSStringCompareOptions.LiteralSearch, range: nil) //replaces spaces with string
+        proeq = proeq.replacingOccurrences(of: " ", with: "&space;", options: NSString.CompareOptions.literal, range: nil) //replaces spaces with string
         
         loadURL(proeq) //displays URL containing image
         
     }
     
     
-    @IBAction func openSettings (sender: NSButton) //called when settings button is pressed; hides or displays main view/settings view
+    @IBAction func openSettings (_ sender: NSButton) //called when settings button is pressed; hides or displays main view/settings view
     
     {
         if !settings {
-            mainView.hidden = !mainView.hidden
-            settingsView.hidden = !settingsView.hidden
+            mainView.isHidden = !mainView.isHidden
+            settingsView.isHidden = !settingsView.isHidden
         }
         else {
-            settingsView.hidden = !settingsView.hidden
-            mainView.hidden = !mainView.hidden
+            settingsView.isHidden = !settingsView.isHidden
+            mainView.isHidden = !mainView.isHidden
             box.becomeFirstResponder()
         }
         
@@ -147,32 +147,32 @@ extension PanelViewController {
     }
     
     
-    @IBAction func setImageSize (sender: NSPopUpButton) //called on edit of the popup button in the settings view
+    @IBAction func setImageSize (_ sender: NSPopUpButton) //called on edit of the popup button in the settings view
         
     {
         switch stgsPopup1.indexOfSelectedItem //assigns value to defaults key "imgsize" depending on user's choice
         {
         case 0:
-            defaults.setInteger(300, forKey: "imgSize")
+            defaults.set(300, forKey: "imgSize")
         case 1:
-            defaults.setInteger(600, forKey: "imgSize")
+            defaults.set(600, forKey: "imgSize")
         case 2:
-            defaults.setInteger(900, forKey: "imgSize")
+            defaults.set(900, forKey: "imgSize")
         default:
-            defaults.setInteger(900, forKey: "imgSize")
-            stgsPopup1.selectItemAtIndex(2)
+            defaults.set(900, forKey: "imgSize")
+            stgsPopup1.selectItem(at: 2)
         }
         defaults.synchronize()
     }
     
     
-    @IBAction func switchCopyMode (sender: NSButton) //called on click on stgsbutton1
+    @IBAction func switchCopyMode (_ sender: NSButton) //called on click on stgsbutton1
     
     {
         
         //defaults key "isCopied" is assigned its opposite value
-        let boolToBeReverted: Bool = defaults.boolForKey ("isCopied")
-        defaults.setBool(!boolToBeReverted, forKey: "isCopied")
+        let boolToBeReverted: Bool = defaults.bool (forKey: "isCopied")
+        defaults.set(!boolToBeReverted, forKey: "isCopied")
         defaults.synchronize()
         
         //adjusts stgsbutton1's title
@@ -185,8 +185,8 @@ extension PanelViewController {
     }
     
     
-    @IBAction func quit (sender: NSButton) {
-        NSApplication.sharedApplication().terminate(sender)
+    @IBAction func quit (_ sender: NSButton) {
+        NSApplication.shared().terminate(sender)
     }
     
 }

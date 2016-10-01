@@ -274,6 +274,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
+				TargetAttributes = {
+					4C8BD7D042B6ADFDF2C7744D = {
+						LastSwiftMigration = 0800;
+					};
+					81DD68ADF3BC112F9E0E5FE1 = {
+						LastSwiftMigration = 0800;
+					};
+				};
 			};
 			buildConfigurationList = 99E43D9060B753E5CBAACBF5 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -345,6 +353,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -434,6 +443,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -451,6 +461,7 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -468,6 +479,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
