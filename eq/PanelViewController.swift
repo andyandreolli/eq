@@ -25,38 +25,25 @@ class PanelViewController: NSViewController {
     var clipboard = NSPasteboard.general()
     var defaults = UserDefaults.standard
     
+    var pngGenerator = TexEq() //initialises image generator
+    
     var settings: Bool = false //if true, settings are shown
     
     
     
-    func loadURL (_ eq: String) //takes latex code as input; downloads, displays and copies to clipboard the equation image
+    func loadEq (eq:String) //takes latex code as input; downloads, displays and copies to clipboard the equation image
     {
         
-        //first the URLs are generated
-        var req = "http://latex.codecogs.com/png.latex?\\dpi{" + String(defaults.integer(forKey: "imgSize")) + "}&space;" + eq //HQ image that will be printed on screen
-        var cpy = "http://latex.codecogs.com/png.latex?\\dpi{200}&space;" + eq //smaller image that will be copied to clipboard
+        let pngData = pngGenerator.getEqPNG(latexCode: eq, desiredResolution: CGFloat(defaults.float(forKey: "imgSize")))
         
-        //strings containing URLs are then encoded with allowed characters only
-        req = req.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed)!
-        cpy = cpy.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlFragmentAllowed)!
-        
-        //strings are converted to NSURL type
-        let requesturl = URL (string: req)
-        let cpyurl = URL(string: cpy)
-        //and then downloaded
-        let data = try? Data(contentsOf: requesturl!)
-        let cpydata = try? Data(contentsOf: cpyurl!)
-        
-        //if something has actually been downloaded, it gets printed to screen
-        if data != nil {
-            pic.image = NSImage(data: data!)
-            if defaults.bool(forKey: "isCopied") == eqImage //the low quality image is copied to clipboard if required
-            {
-                let obj: NSObject = NSArray (object: NSImage(data: cpydata!)!)
-                clipboard.clearContents()
-                clipboard.writeObjects (obj as! [AnyObject] as! [NSPasteboardWriting])
-            }
+        pic.image = NSImage(data: pngData)
+        if defaults.bool(forKey: "isCopied") == eqImage //the low quality image is copied to clipboard if required
+        {
+            let obj: NSObject = NSArray (object: NSImage(data: pngData)!)
+            clipboard.clearContents()
+            clipboard.writeObjects (obj as! [AnyObject] as! [NSPasteboardWriting])
         }
+        
         
     }
 
@@ -83,13 +70,18 @@ class PanelViewController: NSViewController {
         
         if defaults.object(forKey: "imgSize") == nil //this key tells the size of the displayed image
         {
-            defaults.set(900, forKey: "imgSize") //the key is generated if not existing
+            defaults.set(2048, forKey: "imgSize") //the key is generated if not existing
             defaults.synchronize()
             stgsPopup1.selectItem(at: 2) //selects correct object in the settings' popup list
         }
-            
-        else {
-            stgsPopup1.selectItem(at: defaults.integer(forKey: "imgSize")/300 - 1) //selects correct object in the settings' popup list
+        else if defaults.object(forKey: "imgSize") as! Int == 512 {
+            stgsPopup1.selectItem(at: 0) //selects correct object in the settings' popup list
+        }
+        else if defaults.object(forKey: "imgSize") as! Int == 1024 {
+            stgsPopup1.selectItem(at: 1) //selects correct object in the settings' popup list
+        }
+        else if defaults.object(forKey: "imgSize") as! Int == 20148 {
+            stgsPopup1.selectItem(at: 2) //selects correct object in the settings' popup list
         }
         
     }
@@ -116,9 +108,7 @@ extension PanelViewController {
             clipboard.setString(proeq, forType: NSStringPboardType)
         }
         
-        proeq = proeq.replacingOccurrences(of: " ", with: "&space;", options: NSString.CompareOptions.literal, range: nil) //replaces spaces with string
-        
-        loadURL(proeq) //displays URL containing image
+        loadEq(eq:proeq) //generates and displays image
         
     }
     
@@ -153,13 +143,13 @@ extension PanelViewController {
         switch stgsPopup1.indexOfSelectedItem //assigns value to defaults key "imgsize" depending on user's choice
         {
         case 0:
-            defaults.set(300, forKey: "imgSize")
+            defaults.set(512, forKey: "imgSize")
         case 1:
-            defaults.set(600, forKey: "imgSize")
+            defaults.set(1024, forKey: "imgSize")
         case 2:
-            defaults.set(900, forKey: "imgSize")
+            defaults.set(2048, forKey: "imgSize")
         default:
-            defaults.set(900, forKey: "imgSize")
+            defaults.set(2048, forKey: "imgSize")
             stgsPopup1.selectItem(at: 2)
         }
         defaults.synchronize()
